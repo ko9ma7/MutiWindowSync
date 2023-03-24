@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="mutiWindowSync.Views.HandleShow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:mutiWindowSync.Views"
+             xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:mvvm="http://prismlibrary.com/"
+             xmlns:manage="clr-namespace:mutiWindowSync.ViewModels"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mvvm:ViewModelLocator.AutoWireViewModel="True"
+             d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type manage:HandleShowViewModel}}"
+             mc:Ignorable="d"
+             d:DesignHeight="200" d:DesignWidth="300">
+    <b:Interaction.Triggers>
+        <b:EventTrigger EventName="Loaded">
+            <b:InvokeCommandAction Command="{Binding LoadingCommand}" />
+        </b:EventTrigger>
+    </b:Interaction.Triggers>
+    <Grid>
+        <DataGrid
+            ItemsSource="{Binding ScheduleBaseDataGrids}"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Binding="{Binding HandleId}"
+                    IsReadOnly="True"
+                    Header="窗口句柄"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" />
+                
+                <DataGridTextColumn
+                    Binding="{Binding Id}"
+                    IsReadOnly="True"
+                    Header="线程序号"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" />
+                
+                <DataGridTextColumn
+                    Binding="{Binding State}"
+                    IsReadOnly="True"
+                    Header="线程状态"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" />
+                
+                <DataGridTextColumn
+                    Binding="{Binding Title}"
+                    IsReadOnly="True"
+                    Header="窗口标题"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" />
+                
+                <DataGridTextColumn
+                    Binding="{Binding Type}"
+                    IsReadOnly="True"
+                    Header="窗口状态"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" />
+                
+                <DataGridTextColumn
+                    Binding="{Binding Size}"
+                    IsReadOnly="True"
+                    Header="窗口大小"
+                    ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}" />
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
