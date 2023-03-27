@@ -19,6 +19,7 @@
 
     <ItemGroup>
       <Folder Include="DmSoft\" />
+      <Folder Include="service\IService" />
     </ItemGroup>
 
     <ItemGroup>

@@ -18,6 +18,7 @@ using mutiWindowSync.Const;
 using mutiWindowSync.Entity;
 using mutiWindowSync.Events;
 using mutiWindowSync.service;
+using mutiWindowSync.service.IService;
 using mutiWindowSync.ViewModels;
 using mutiWindowSync.Views;
 using Prism.Events;
@@ -38,12 +39,13 @@ namespace mutiWindowSync
         private readonly IRegionManager _regionManager;
         private IRegion _manageContent;
         private readonly IEventAggregator _eventAggregator;
+        private readonly IDmService _dmService;
 
-        public MainWindow(IContainerProvider containerProvider, IEventAggregator eventAggregator)
+        public MainWindow(IContainerProvider containerProvider, IEventAggregator eventAggregator, IDmService dmService)
         {
             InitializeComponent();
             _eventAggregator = eventAggregator;
-            
+            _dmService = dmService;
             
             var regionManager = containerProvider.Resolve<IRegionManager>();
             regionManager.RegisterViewWithRegion(RegionNames.HandleShowArea,typeof(HandleShow));
@@ -84,7 +86,7 @@ namespace mutiWindowSync
 
         private void Button_starSync(object sender, RoutedEventArgs e)
         {
-            _eventAggregator.GetEvent<StarAllHandleEvent>().Publish();
+            _dmService.capture();
         }
     }
 }

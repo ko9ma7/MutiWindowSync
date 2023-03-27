@@ -1,4 +1,5 @@
-﻿using Prism.Ioc;
+﻿using mutiWindowSync.service.IService;
+using Prism.Ioc;
 
 namespace mutiWindowSync.service
 {
@@ -6,7 +7,7 @@ namespace mutiWindowSync.service
     {
         public static void AddServicesRegister(this IContainerRegistry containerRegistry)
         {
-            // containerRegistry.Register<IToDoService, ToDoService>();
+            containerRegistry.Register<IDmService, DmService>();
         }
     }
 }
