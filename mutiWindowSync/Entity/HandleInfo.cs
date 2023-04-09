@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace mutiWindowSync.Entity
 {
@@ -21,6 +22,8 @@ namespace mutiWindowSync.Entity
         }
         
         public IntPtr Handle { get; set; }
+        
+        public List<IntPtr> Handles { get; set; }
         /**
          * 线程状态
          */

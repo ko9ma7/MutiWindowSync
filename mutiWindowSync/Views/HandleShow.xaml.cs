@@ -1,4 +1,5 @@
 ﻿using System.Windows.Controls;
+using mutiWindowSync.ViewModels;
 
 namespace mutiWindowSync.Views
 {
@@ -7,6 +8,12 @@ namespace mutiWindowSync.Views
         public HandleShow()
         {
             InitializeComponent();
+        }
+        
+        private  HandleShowViewModel _dataContext;
+        private HandleShowViewModel MDataContext
+        {
+            get { return _dataContext ??= (HandleShowViewModel) DataContext; }
         }
     }
 }

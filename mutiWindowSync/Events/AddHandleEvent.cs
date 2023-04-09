@@ -12,4 +12,9 @@ namespace mutiWindowSync.Events
     {
         
     }
+    
+    public class ClearHandleEvent : PubSubEvent
+    {
+        
+    }
 }

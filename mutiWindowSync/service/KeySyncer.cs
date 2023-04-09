@@ -43,7 +43,7 @@ namespace mutiWindowSync.service
             // 根据进程ID获取Process对象
             System.Diagnostics.Process process = System.Diagnostics.Process.GetProcessById((int)processId);
             var curModule = process.MainModule;
-            return SetWindowsHookEx(WH_KEYBOARD_LL, proc, GetModuleHandle(curModule.ModuleName), 0);
+            return SetWindowsHookEx(WH_KEYBOARD_LL, proc, IntPtr.Zero, 0);
             
         }
 

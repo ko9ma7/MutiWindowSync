@@ -25,6 +25,11 @@ namespace mutiWindowSync.service
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool EnumChildWindows(IntPtr hwndParent, EnumWindowsProc lpEnumFunc, IntPtr lParam);
+        
+        // 获取子窗口句柄
+        [DllImport("user32.dll", EntryPoint = "FindWindowEx")]
+        private static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
+        
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
@@ -174,9 +179,9 @@ namespace mutiWindowSync.service
             Caption = str.ToString();
         }
 
-        public SpiedWindow GetParentWindow()
+        public SpiedWindow GetParentWindow(IntPtr Hwnd)
         {
-            return new SpiedWindow(GetParent(Handle));
+            return new SpiedWindow(GetParent(Hwnd));
         }
 
         public void SeParentwindow(IntPtr parentHandle)

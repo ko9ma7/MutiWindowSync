@@ -34,6 +34,12 @@ namespace mutiWindowSync.ViewModels
 
             _eventAggregator.GetEvent<AddHandleEvent>().Subscribe(AddHandleEvent);
             _eventAggregator.GetEvent<StarAllHandleEvent>().Subscribe(StarAllHandle);
+            _eventAggregator.GetEvent<ClearHandleEvent>().Subscribe(ClearHandle);
+        }
+
+        private void ClearHandle()
+        {
+            ScheduleBaseDataGrids.Clear();
         }
 
         private void StarAllHandle()
@@ -87,6 +93,11 @@ namespace mutiWindowSync.ViewModels
                 {
                     MessageBox.Show($"已经存在该句柄！Title:{obj.Title}");
                     return;
+                }
+
+                if (ScheduleBaseDataGrids.Count == 0)
+                {
+                    obj.Type = "主控端";
                 }
                 ScheduleBaseDataGrids.Add(obj);
             }

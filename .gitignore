@@ -1,3 +1,23 @@
 /mutiWindowSync/bin/*
 /mutiWindowSync/obj/*
 
+mutiWindowSync/bin/Debug/net5.0-windows/mutiWindowSync.dll
+mutiWindowSync/bin/Debug/net5.0-windows/mutiWindowSync.pdb
+mutiWindowSync/bin/Debug/net5.0-windows/mutiWindowSync.runtimeconfig.dev.json
+mutiWindowSync/config/DmConfig.cs
+mutiWindowSync/obj/mutiWindowSync.csproj.nuget.dgspec.json
+mutiWindowSync/obj/mutiWindowSync.csproj.nuget.g.props
+mutiWindowSync/obj/project.assets.json
+mutiWindowSync/obj/project.nuget.cache
+mutiWindowSync/obj/project.packagespec.json
+mutiWindowSync/obj/rider.project.restore.info
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync_MarkupCompile.cache
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync_MarkupCompile.lref
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync.assets.cache
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync.csproj.AssemblyReference.cache
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync.csproj.CoreCompileInputs.cache
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync.csproj.FileListAbsolute.txt
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync.dll
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync.GeneratedMSBuildEditorConfig.editorconfig
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync.genruntimeconfig.cache
+mutiWindowSync/obj/Debug/net5.0-windows/mutiWindowSync.pdb

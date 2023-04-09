@@ -11,6 +11,7 @@ namespace mutiWindowSync.service
         public static void AddNavigationRegister(this IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<HandleShow, HandleShowViewModel>();
+            containerRegistry.RegisterForNavigation<MainWindow, MainWindowViewModel>();
             
             
         }

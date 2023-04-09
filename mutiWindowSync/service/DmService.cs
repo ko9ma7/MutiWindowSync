@@ -34,12 +34,12 @@ namespace mutiWindowSync.service
             dmSoft = new DmSoftCustomClassName();
 
             // 收费注册
-            var regResult = dmSoft.Reg(DmConfig.DmRegCode, DmConfig.DmVerInfo);
-            Debug.WriteLine($"收费注册返回：{regResult}");
-            if (regResult != 1)
-            {
-                throw new Exception("收费注册失败");
-            }
+            // var regResult = dmSoft.Reg(DmConfig.DmRegCode, DmConfig.DmVerInfo);
+            // Debug.WriteLine($"收费注册返回：{regResult}");
+            // if (regResult != 1)
+            // {
+            //     throw new Exception("收费注册失败");
+            // }
 
             // 判断 Resources 是否存在，不存在就创建
             if (!Directory.Exists(DmConfig.DmGlobalPath))
